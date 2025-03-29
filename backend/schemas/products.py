@@ -4,10 +4,10 @@ from pydantic import BaseModel, Field
 
 class Product(BaseModel):
     id: Optional[int] = None
-    name: str = Field(min_length=2, max_length=20)
+    name: str = Field(min_length=2, max_length=50)
     price: float = Field(ge=1, le=1000000000)
     quantity: int = Field(ge=0, le=10000)
-    category: str = Field(min_length=1, max_length=20)
+    category: str = Field(min_length=1, max_length=50)
     description: str = Field(min_length=15, max_length=100)
 
     model_config = {

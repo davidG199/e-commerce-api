@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.responses import  HTMLResponse
 from config.database import Base, engine
 from routers.user import user_router
+from routers.products import product_router
 
 #iniciamos fastapi y lo guardamos en la variable app
 app = FastAPI()
@@ -16,6 +17,8 @@ Base.metadata.create_all(bind=engine)
 
 #incluimos nuestro archivo con los endpoints de los usuarios
 app.include_router(user_router)
+
+app.include_router(product_router)
 
 #iniciamos nuestra api en su raiz
 @app.get("/", tags=["root"])
