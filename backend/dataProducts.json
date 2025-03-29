@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "Intel Core i9-13900K",
+    "price": 599.99,
+    "quantity": 15,
+    "category": "Procesadores",
+    "description": "Procesador de 13ª generación con 24 núcleos y 32 hilos, ideal para gaming y creación de contenido."
+  },
+  {
+    "id": 2,
+    "name": "AMD Ryzen 7 7800X3D",
+    "price": 449.99,
+    "quantity": 20,
+    "category": "Procesadores",
+    "description": "Procesador con tecnología 3D V-Cache para un rendimiento superior en videojuegos."
+  },
+  {
+    "id": 3,
+    "name": "NVIDIA GeForce RTX 4080",
+    "price": 1199.99,
+    "quantity": 10,
+    "category": "Tarjetas Gráficas",
+    "description": "GPU de última generación con 16GB GDDR6X y tecnología DLSS 3."
+  },
+  {
+    "id": 4,
+    "name": "AMD Radeon RX 7900 XTX",
+    "price": 999.99,
+    "quantity": 12,
+    "category": "Tarjetas Gráficas",
+    "description": "Tarjeta gráfica con arquitectura RDNA 3 y 24GB de memoria GDDR6."
+  },
+  {
+    "id": 5,
+    "name": "Corsair Vengeance RGB Pro 32GB (2x16GB) 3600MHz",
+    "price": 129.99,
+    "quantity": 30,
+    "category": "Memorias RAM",
+    "description": "Kit de memoria DDR4 de alto rendimiento con iluminación RGB personalizable."
+  },
+  {
+    "id": 6,
+    "name": "Kingston Fury Renegade 32GB (2x16GB) 6000MHz DDR5",
+    "price": 199.99,
+    "quantity": 25,
+    "category": "Memorias RAM",
+    "description": "Memoria DDR5 ultra rápida con disipador de calor de alto rendimiento."
+  },
+  {
+    "id": 7,
+    "name": "Samsung 990 PRO 2TB NVMe SSD",
+    "price": 249.99,
+    "quantity": 18,
+    "category": "Almacenamiento",
+    "description": "Unidad SSD NVMe PCIe 4.0 con velocidades de lectura de hasta 7450 MB/s."
+  },
+  {
+    "id": 8,
+    "name": "Western Digital Black SN850X 1TB",
+    "price": 149.99,
+    "quantity": 22,
+    "category": "Almacenamiento",
+    "description": "SSD NVMe de alto rendimiento con disipador térmico integrado."
+  },
+  {
+    "id": 9,
+    "name": "MSI MAG B650 TOMAHAWK WIFI",
+    "price": 239.99,
+    "quantity": 14,
+    "category": "Placas Base",
+    "description": "Placa base compatible con procesadores AMD Ryzen serie 7000 con conectividad Wi-Fi 6E."
+  },
+  {
+    "id": 10,
+    "name": "ASUS ROG STRIX Z790-E Gaming WIFI",
+    "price": 499.99,
+    "quantity": 8,
+    "category": "Placas Base",
+    "description": "Placa base de gama alta para Intel con soporte DDR5 y PCIe 5.0."
+  }
+]
