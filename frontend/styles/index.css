@@ -2,6 +2,12 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family: "DM Sans", sans-serif;;
+    font-family: "DM Sans", sans-serif;
+}
+
+body{
+    font-weight:lighter;
+    height: 100vh;
+    background-color: black;
 }
 
