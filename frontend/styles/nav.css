@@ -4,7 +4,7 @@
 }
 
 header {
-  /* padding: 1rem 0.625rem; */
+  padding: 1rem 0;
   width: 100%;
 }
 
@@ -46,7 +46,7 @@ header {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  margin: 1rem;
+  margin: 0 1rem 1rem ;
 }
 
 .nav .nav-ul li {
