@@ -1,0 +1,17 @@
+/* main{
+
+} */
+
+
+main #contenedorProductos{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 1rem auto;
+}
+
+main #contenedorProductos .card_producto{
+    display: flex;
+    flex-direction: column;
+
+}
