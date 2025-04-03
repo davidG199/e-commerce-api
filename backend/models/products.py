@@ -12,3 +12,4 @@ class product(Base):
     quantity = Column(Integer)
     category = Column(String)
     description = Column(String)
+    image_url = Column(String, nullable=True)
