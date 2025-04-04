@@ -11,7 +11,7 @@ main #contenedorProductos .card_producto{
     flex-direction: column;
     width: 70%;
     margin: auto;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
     border-radius: 10px;
     background-color: rgb(20, 20, 20);
     box-shadow: 0px 6px 14px 0px rgba(227, 227, 227, 0.5);
@@ -44,4 +44,21 @@ main #contenedorProductos .card_producto div span p:first-child{
 
 main #contenedorProductos .card_producto div h3 + p{
     margin: 10px 0;
+}
+
+@media  (min-width: 768px) {
+    main #contenedorProductos{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    main #contenedorProductos .card_producto{
+        width: 250px ;
+        height: 450px;
+    }
+    
+    main #contenedorProductos .card_producto img{
+        height: 50%;
+        /* object-fit:cover; */
+    }
 }
