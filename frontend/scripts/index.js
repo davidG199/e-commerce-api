@@ -31,11 +31,15 @@ function cardProduct(producto) {
     : `http://localhost:8000/${producto.image_url}`;
 
   card.innerHTML = `
-          <h2>${nombreProducto}</h2>
-          <p>${descripcionProducto}</p>
+      <img src="${imagenProducto}" alt="${producto.name}";" />
+      <div>
+        <h3>${nombreProducto}</h3>
+        <p>${descripcionProducto}</p>
+        <span>
           <p>$${precioProducto}</p>
           <p>${categoriaProducto}</p>
-          <img src="${imagenProducto}" alt="${producto.name}";" />
+        </span>
+      </div>
     `;
 
   contenedorProductos.appendChild(card);
