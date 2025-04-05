@@ -4,13 +4,15 @@ main #contenedorProductos{
     flex-direction: column;
     margin: 1.5rem 0;
     gap: 24px;
+    justify-content: center;
+    align-items: center;
 }
 
 main #contenedorProductos .card_producto{
     display: flex;
     flex-direction: column;
-    width: 70%;
-    margin: auto;
+    width: 250px;
+    /* margin: auto; */
     /* border: 1px solid gray; */
     border-radius: 10px;
     background-color: rgb(20, 20, 20);
@@ -50,6 +52,7 @@ main #contenedorProductos .card_producto div h3 + p{
     main #contenedorProductos{
         flex-direction: row;
         flex-wrap: wrap;
+        margin: 1.5rem;
     }
 
     main #contenedorProductos .card_producto{
