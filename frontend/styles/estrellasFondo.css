@@ -32,7 +32,7 @@
   animation: parpadeoEstrella 2s infinite ease-in-out;
 }
 
-.estrella-fugaz {
+.estrella_fugaz {
   position: absolute;
   top: 0;
   left: 0;
@@ -43,7 +43,7 @@
   border-radius: 50%;
   opacity: 0.8;
   animation: fugazAnimacion 1.5s linear forwards;
-  z-index: -1;
+  z-index: -2;
 }
 
 @keyframes parpadeoEstrella {

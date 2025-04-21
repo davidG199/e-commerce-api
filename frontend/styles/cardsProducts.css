@@ -15,7 +15,7 @@ main #contenedorProductos .card_producto{
     /* margin: auto; */
     /* border: 1px solid gray; */
     border-radius: 10px;
-    background-color: rgb(20, 20, 20);
+    background-color: transparent;
     box-shadow: 0px 6px 14px 0px rgba(227, 227, 227, 0.5);
 }
 
@@ -53,6 +53,7 @@ main #contenedorProductos .card_producto div h3 + p{
         flex-direction: row;
         flex-wrap: wrap;
         margin: 1.5rem;
+        gap: 32px;
     }
 
     main #contenedorProductos .card_producto{

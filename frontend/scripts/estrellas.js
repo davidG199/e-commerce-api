@@ -5,7 +5,15 @@ document.addEventListener("DOMContentLoaded", () => {
 function CrearEstrella() {
   const espacio = document.getElementById("bg_class");
 
-  for (let i = 0; i < 100; i++) {
+  //capturamos las dimensiones de la pantalla
+  const anchoPantalla = window.innerWidth
+  const altoPantalla = window.innerHeight
+
+  //ajustamos la cantidad de estrellas segun el tamaño de la pantalla
+  let factorDensidad = 5000;
+  const cantidadEstrellas = Math.floor((anchoPantalla * altoPantalla) / factorDensidad)
+
+  for (let i = 0; i < cantidadEstrellas; i++) {
     const estrella = document.createElement("div");
     estrella.classList.add("estrella");
 
@@ -27,7 +35,7 @@ function CrearEstrella() {
 
 function crearEstrellaFugaz() {
   const estrella = document.createElement("div");
-  estrella.classList.add("estrella-fugaz");
+  estrella.classList.add("estrella_fugaz");
 
   // Posición inicial aleatoria arriba o en los bordes
   const inicioX = Math.random() * window.innerWidth * 0.8;
