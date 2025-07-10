@@ -1,0 +1,109 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal principal */
+.modal-card {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  padding: 1rem;
+  position: relative;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  animation: slideUp 0.3s ease;
+}
+
+/* Animación */
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Botón de cerrar */
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Imagen del producto */
+.modal-card picture {
+  width: 100%;
+  height: 60%;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.modal-card img {
+  width: 75%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: fill;
+}
+
+/* Info */
+.modal-info h2 {
+  margin-top: 0.5rem;
+  font-size: 20px;
+}
+
+.modal-info p {
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+.modal-info .price {
+  font-size: 18px;
+  color: #4caf50;
+  margin-top: 0.5rem;
+}
+
+.modal-info .category,
+.modal-info .stock {
+  font-weight: 700;
+}
+
+.modal-info .category span,
+.modal-info .stock span {
+  font-weight: 100;
+}
+
+.modal-buy {
+  background-color: rgb(81, 206, 85);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.modal-buy:hover {
+  background-color: #3e9142;
+}
