@@ -12,6 +12,10 @@ body {
   color: white;
 }
 
+.main-home{
+  margin-top: 4.25rem;
+}
+
 main .title{
   text-align: center;
   text-shadow: 0px 2px 5px rgb(125, 125, 125);

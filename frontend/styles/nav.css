@@ -7,6 +7,10 @@ header {
   padding-top: 1rem;
   width: 100%;
   background-color: black;
+  filter: opacity(0.9);
+  position: fixed;
+  top: 0;
+  z-index: 2;
 }
 
 .nav {
