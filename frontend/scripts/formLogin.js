@@ -26,25 +26,43 @@ window.addEventListener("DOMContentLoaded", () => {
   btnLoginToggle.classList.add("active-tab");
   btnSignInToggle.classList.remove("active-tab");
 
-  // Agregar evento de submit al formulario de inicio de sesión
+  // Agregar evento de submit al formulario de registro de usuario
   signInForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    // Obtenemos los datos del formulario de registro
     const userData = obtenerDatosFormulario();
+    // Validamos los datos del formulario
     const validacion = validarDatosFormulario(userData);
     console.log(obtenerDatosFormulario());
 
-    if (!validacion) {
+    // Si la validación falla, mostramos un mensaje de error y detenemos el proceso
+    if (!validacion.ok) {
       alert(validacion.msg);
       return;
     }
 
+    // Si la validación es exitosa, intentamos registrar al usuario
+    // y manejamos la respuesta del servidor
     const response = await registrarUsuario(userData);
     manejarRespuesta(response, signInForm);
   });
-});
 
-//funcionalidades del login
+  // Agregar evento de submit al formulario de inicio de sesión
+  loginForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const userData = obtenerDatosLogin();
+
+    if (!userData.email || !userData.password) {
+      alert("Por favor completa todos los campos.");
+      return;
+    }
+
+    const response = await iniciarSesion(userData);
+    await manejarRespuestaLogin(response);
+  });
+});
 
 let btnLogin = document.getElementById("btn_login");
 let btnRegister = document.getElementById("btn_register");
@@ -55,11 +73,16 @@ function obtenerDatosFormulario() {
     name: document.getElementById("name_register").value.trim(),
     email: document.getElementById("email_register").value.trim(),
     password: document.getElementById("constrasena_register").value.trim(),
-    confirmPassword: document.getElementById("confirm_constrasena").value.trim(),
+    confirmPassword: document
+      .getElementById("confirm_constrasena")
+      .value.trim(),
     role: document.getElementById("user_type").value.trim(),
   };
 }
 
+//funcion para validar los datos del formulario
+// Esta función verifica que todos los campos del formulario estén completos y que las contraseñas coincidan
+// Si hay algún error, devuelve un objeto con un mensaje de error; si todo es correcto, devuelve un objeto con ok: true
 function validarDatosFormulario(userData) {
   if (
     !userData.name ||
@@ -72,15 +95,14 @@ function validarDatosFormulario(userData) {
   }
 
   if (userData.password !== userData.confirmPassword) {
-    return {
-      ok: false,
-      msg: "La contraseña debe tener al menos 6 caracteres.",
-    };
+    return { ok: false, msg: "Las contraseñas no coinciden." };
   }
 
   return { ok: true };
 }
 
+//funcion para registrar el usuario
+// Esta función envía una solicitud POST al servidor para registrar un nuevo usuario
 async function registrarUsuario(userData) {
   try {
     const response = await fetch("http://localhost:8000/user/register", {
@@ -102,12 +124,11 @@ async function registrarUsuario(userData) {
   }
 }
 
+//funcion para manejar la respuesta del servidor
+// Esta función maneja la respuesta del servidor después de intentar registrar un usuario
 async function manejarRespuesta(response, form) {
-  if (!response.ok) {
-    alert("No se pudo conectar al servidor. Por favor, intenta más tarde.");
-    return;
-  }
-
+  // Si la respuesta es exitosa, se muestra un mensaje de éxito y se reinicia el formulario
+  // Si hay un error, se muestra un mensaje de error al usuario
   if (response.ok) {
     const result = await response.json();
     console.log("usuario registrado: ", result);
@@ -117,4 +138,52 @@ async function manejarRespuesta(response, form) {
     const errorData = await response.json();
     alert(errorData.detail || "Error al registrar al usuario");
   }
+}
+
+function obtenerDatosLogin() {
+  return {
+    email: document.getElementById("email_login").value.trim(),
+    password: document.getElementById("contrasena_login").value.trim(),
+  };
+}
+
+//funcion para iniciar sesion
+// Esta función envía una solicitud POST al servidor para iniciar sesión con las credenciales del usuario
+async function iniciarSesion(userData) {
+  const formBody = new URLSearchParams();
+  formBody.append("username", userData.email);
+  formBody.append("password", userData.password);
+
+  try {
+    const response = await fetch("http://localhost:8000/user/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: formBody,
+    });
+    return response;
+  } catch (error) {
+    console.error("Error al iniciar sesión:", error);
+    return null;
+  }
+}
+
+//Esta función maneja la respuesta del servidor después de intentar iniciar sesión
+// Si la respuesta es exitosa, guarda el token de acceso en localStorage y muestra un mensaje de éxito
+async function manejarRespuestaLogin(response) {
+  if (!response || !response.ok) {
+    alert("Credenciales incorrectas o error en el servidor.");
+    return;
+  }
+
+  const data = await response.json();
+  const token = data.access_token;
+
+  // Guardamos el token en localStorage
+  localStorage.setItem("access_token", token);
+
+  alert("Inicio de sesión exitoso!");
+  // Redirigimos al usuario a la página principal o a donde sea necesario
+  window.location.href = "/frontend/index.html";
 }
