@@ -5,10 +5,10 @@ from pydantic import BaseModel, Field
 
 class User(BaseModel):
     id: Optional[int] = None
-    username: str = Field(min_length=2, max_length=25)
-    email: str = Field(min_length=2, max_length=30)
+    username: str = Field(min_length=2, max_length=50)
+    email: str = Field(min_length=2, max_length=100)
     password: str = Field(min_length=2, max_length=20)
-    type: str = Field(min_length=2, max_length=10)
+    type: str = Field(min_length=2, max_length=20)
 
     model_config = {
         'json_schema_extra':{
