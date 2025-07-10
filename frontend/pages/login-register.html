@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Api-ecommerce</title>
+    <link
+      rel="shortcut icon"
+      href="/frontend/icons/shopping_cart.svg"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/frontend/styles/main.css" />
+    <link rel="stylesheet" href="/frontend/styles/nav.css" />
+    <link rel="stylesheet" href="/frontend/styles/login.css" />
+    <link rel="stylesheet" href="/frontend/styles/estrellasFondo.css" />
+  </head>
+  <body>
+    <div id="bg_class"></div>
+
+    <header>
+      <nav class="nav">
+        <input type="checkbox" id="nav_checkbox" class="nav_checkbox" />
+        <label for="nav_checkbox" class="nav_toggle">
+          <img src="/frontend/icons/menu-2.svg" alt="" class="menu" />
+          <img src="/frontend/icons/close.svg" alt="" class="close" />
+        </label>
+
+        <ul class="nav-ul">
+          <li>
+            <a href="/frontend/index.html">E-commerce-API</a>
+          </li>
+          <li>
+            <a href="#">Productos</a>
+          </li>
+          <li>
+            <a href="./login-register.html"> Ingresar </a>
+          </li>
+          <li>
+            <a href="#"
+              ><img
+                src="/frontend/icons/shopping_cart.svg"
+                alt="shopping_cart_icon"
+            /></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main-login">
+      <div class="form">
+        <div class="span-icon">
+          <span>
+            <img src="/frontend/icons/rocket-fill.svg" alt="rocket-icon" />
+          </span>
+        </div>
+        <section class="container-form">
+          <div class="form-titles">
+            <h3 class="btn_login_toggle">Iniciar Sesión</h3>
+            <h3 class="btn_signIn_toggle">Registrarse</h3>
+          </div>
+
+          <!-- -------------------->
+          <!-- elementos para el login form -->
+          <form action="" class="login-form" id="login_form">
+            <div>
+              <label for="email">Email:</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="email"
+                required
+                autocomplete="off"
+              />
+            </div>
+            <div>
+              <label for="constrasena">Contraseña</label>
+              <input
+                type="password"
+                name="contrasena"
+                id="constrasena"
+                class="contrasena"
+                required
+              />
+            </div>
+            <div>
+              <input type="checkbox" name="remember_me" />
+              <label for="">Recuerdame</label>
+            </div>
+            <div>
+              <button class="buton_form" id="btn_login" type="submit">
+                Ingresar
+              </button>
+              <a href="#" class="">¿Olvidaste la contraseña?</a>
+            </div>
+          </form>
+          <!-- ----------------->
+          <!-- elementos para el sign In form -->
+          <form action="" class="signIn-form" id="signIn_form">
+            <div>
+              <label for="name">Nombre:</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                class="name"
+                required
+                autocomplete="off"
+              />
+            </div>
+            <div>
+              <label for="email">Email:</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                class="email"
+                required
+                autocomplete="off"
+              />
+            </div>
+            <div>
+              <label for="constrasena">Contraseña</label>
+              <input
+                type="password"
+                name="contrasena"
+                id="constrasena"
+                class="contrasena"
+                required
+              />
+            </div>
+            <div>
+              <label for="confirm_constrasena">Confirmar contraseña</label>
+              <input
+                type="password"
+                name="confirm_constrasena"
+                id="confirm_constrasena"
+                class="confirm_constrasena"
+                required
+              />
+            </div>
+            <div>
+              <label for="user_type">Rol: </label>
+              <select name="user_type" id="user_type">
+                <option value="admin">Administrador</option>
+                <option value="user">Usuario</option>
+              </select>
+            </div>
+            <div>
+              <button class="buton_form" id="btn_register" type="submit">
+                Registrarse
+              </button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
+    <script src="/frontend/scripts/estrellas.js"></script>
+    <script src="/frontend/scripts/formLogin.js"></script>
+  </body>
+</html>

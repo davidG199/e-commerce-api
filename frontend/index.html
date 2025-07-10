@@ -6,6 +6,7 @@
     <title>Api-Ecommerce</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="shortcut icon" href="/frontend/icons/shopping_cart.svg" type="image/x-icon" />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
       rel="stylesheet"
@@ -13,7 +14,8 @@
     <link rel="stylesheet" href="./styles/main.css" />
     <link rel="stylesheet" href="./styles/nav.css" />
     <link rel="stylesheet" href="./styles/cardsProducts.css" />
-    <link rel="stylesheet" href="./styles/estrellasFondo.css">
+    <link rel="stylesheet" href="./styles/estrellasFondo.css" />
+    <link rel="stylesheet" href="./styles/modalcard.css" />
   </head>
   <body>
     <div id="bg_class"></div>
@@ -33,18 +35,17 @@
             <a href="#">Productos</a>
           </li>
           <li>
-            <a href="./pages/login.html"> Ingresar </a>
+            <a href="./pages//login-register.html"> Ingresar </a>
           </li>
           <li>
-            <a href="./pages/register.html"> Registrarse </a>
-          </li>
-          <li>
-            <a href="#"><img src="./icons/shopping_cart.svg" alt="shopping_cart_icon"/></a>
+            <a href="#"
+              ><img src="./icons/shopping_cart.svg" alt="shopping_cart_icon"
+            /></a>
           </li>
         </ul>
       </nav>
     </header>
-    <main>
+    <main class="main-home">
       <!-- <section>
         carrusel con diferentes productos de diferentes categorias
       </section> -->
@@ -52,6 +53,26 @@
 
       <!-- aqui van los productos -->
       <section id="contenedorProductos"></section>
+
+      <!-- modal de los productos -->
+      <div class="modal-overlay" id="modal">
+        <div class="modal-card">
+          <button class="close-modal" id="closeModal">&times;</button>
+          <picture>
+            <img id="modalImg" src="" alt="producto" />
+          </picture>
+          <div class="modal-info">
+            <h2 id="modalName">Nombre</h2>
+            <p id="modalDescription">Descripción</p>
+            <p class="price">
+              <strong>$<span id="modalPrice"></span></strong>
+            </p>
+            <p class="category">Categoría: <span id="modalCategory"></span></p>
+            <p class="stock">Stock: <span id="modalStock"></span></p>
+            <button class="modal-buy">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
     </main>
     <footer>HOla como estas, David gomez</footer>
   </body>
