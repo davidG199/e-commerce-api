@@ -109,7 +109,8 @@
   box-shadow: 0 0 10px 1px rgba(200, 200, 200, 0.3);
 }
 
-.main-login .form .container-form .login-form input:focus {
+.main-login .form .container-form .login-form input:focus,
+.main-login .form .container-form .signIn-form input:focus {
   background-color: rgb(150, 150, 150, 1);
 }
 
