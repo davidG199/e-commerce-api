@@ -84,6 +84,9 @@ function obtenerDatosFormulario() {
 // Esta función verifica que todos los campos del formulario estén completos y que las contraseñas coincidan
 // Si hay algún error, devuelve un objeto con un mensaje de error; si todo es correcto, devuelve un objeto con ok: true
 function validarDatosFormulario(userData) {
+  //validacion de contraseña
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
   if (
     !userData.name ||
     !userData.email ||
@@ -96,6 +99,20 @@ function validarDatosFormulario(userData) {
 
   if (userData.password !== userData.confirmPassword) {
     return { ok: false, msg: "Las contraseñas no coinciden." };
+  }
+
+  if (!passwordRegex.test(userData.password)) {
+    return {
+      ok: false,
+      msg: "La contraseña debe tener al maximo 8 caracteres, una mayuscula y al menos un numero",
+    };
+  }
+
+  if (userData.name.length < 3) {
+    return {
+      ok: false,
+      msg: "El nombre de usuario debe contener 3 o más caracteres",
+    };
   }
 
   return { ok: true };
@@ -140,6 +157,7 @@ async function manejarRespuesta(response, form) {
   }
 }
 
+//funcion para obtener los datos del formulario de inicio de sesion
 function obtenerDatosLogin() {
   return {
     email: document.getElementById("email_login").value.trim(),
@@ -172,8 +190,13 @@ async function iniciarSesion(userData) {
 //Esta función maneja la respuesta del servidor después de intentar iniciar sesión
 // Si la respuesta es exitosa, guarda el token de acceso en localStorage y muestra un mensaje de éxito
 async function manejarRespuestaLogin(response) {
-  if (!response || !response.ok) {
-    alert("Credenciales incorrectas o error en el servidor.");
+  if (!response) {
+    alert("Error en el servidor.");
+    return;
+  }
+
+  if (!response.ok) {
+    alert("Contraseña o usuario incorrecto");
     return;
   }
 
@@ -184,6 +207,22 @@ async function manejarRespuestaLogin(response) {
   localStorage.setItem("access_token", token);
 
   alert("Inicio de sesión exitoso!");
+  await userInfByAccessToken();
   // Redirigimos al usuario a la página principal o a donde sea necesario
   window.location.href = "/frontend/index.html";
+}
+
+//funcion para traer la informacion del usuario logeado usando el token de acceso que devuelve la api
+async function userInfByAccessToken() {
+  const token = localStorage.getItem("access_token");
+
+  const response = await fetch("http://localhost:8000/user/current-user", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  const userInfo = await response.json();
+  console.log(userInfo);
+  localStorage.setItem("User", JSON.stringify(userInfo));
 }
