@@ -67,6 +67,7 @@ const modalCard = (producto) => {
   modal.style.display = "flex";
 };
 
+//evento click para cerrar el modal
 closeModal.addEventListener("click", () => {
   modal.style.display = "none";
 });
