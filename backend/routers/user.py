@@ -8,6 +8,8 @@ from config.database import Session
 from schemas.users import User
 from services.user import UserService
 from utils.jwt_manager import create_access_token
+from middlewares.jwt_bearer import current_user
+from models.users import User as UserModel
 
 user_router = APIRouter(prefix="/user", tags=["user"])
 
@@ -40,6 +42,9 @@ def login_user(form_data: Annotated[OAuth2PasswordRequestForm, Depends()]):
     token = create_access_token(data={"sub": str(user.id)})
     return {"access_token": token, "token_type": "bearer"}
 
+@user_router.get("/current-user")
+def get_user(User: UserModel = Depends(current_user)):
+    return User
 
 
 
