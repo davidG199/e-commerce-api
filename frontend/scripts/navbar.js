@@ -15,8 +15,11 @@ if (!user) {
 } else{
     liIngresar.classList.remove("show")
     liUser.classList.add("show")
-
-    liUser.innerHTML = `<a href="#">${user.username}</a>`;
+    if (user.type === "admin") {
+        liUser.innerHTML = `<a href="./pages/admin.html">${user.username}</a>`;
+    } else {
+        liUser.innerHTML = `<a href="#">${user.username}</a>`;
+    }
 }
 
 

@@ -34,7 +34,6 @@ window.addEventListener("DOMContentLoaded", () => {
     const userData = obtenerDatosFormulario();
     // Validamos los datos del formulario
     const validacion = validarDatosFormulario(userData);
-    console.log(obtenerDatosFormulario());
 
     // Si la validación falla, mostramos un mensaje de error y detenemos el proceso
     if (!validacion.ok) {
@@ -66,6 +65,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 let btnLogin = document.getElementById("btn_login");
 let btnRegister = document.getElementById("btn_register");
+
 
 //obtenemos los datos del formulario de registro
 function obtenerDatosFormulario() {

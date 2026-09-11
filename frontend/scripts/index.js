@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 //llamar a la api
 
-function getProducts() {
+export async function getProducts() {
   fetch("http://localhost:8000/products/")
     .then((response) => response.json())
     .then((data) => {
