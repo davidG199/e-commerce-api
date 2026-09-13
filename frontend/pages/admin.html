@@ -73,20 +73,43 @@
       <!-- modal de los productos -->
       <div class="modal-overlay" id="modal">
         <div class="modal-card">
+          <h2 id="modalTitle"></h2>
           <button class="close-modal" id="closeModal">&times;</button>
-          <picture>
-            <img id="modalImg" src="" alt="producto" />
-          </picture>
-          <div class="modal-info">
-            <h2 id="modalName">Nombre</h2>
-            <p id="modalDescription">Descripción</p>
-            <p class="price">
-              <strong>$<span id="modalPrice"></span></strong>
-            </p>
-            <p class="category">Categoría: <span id="modalCategory"></span></p>
-            <p class="stock">Stock: <span id="modalStock"></span></p>
-            <button class="modal-buy">---</button>
-          </div>
+          <form class="modal-form" id="modalForm" >
+            <div>
+              <label for="modalName">Nombre</label>
+              <input type="text" id="modalName" name="modalName" />
+            </div>
+            <div>
+              <label for="quantity">Cantidad</label>
+              <input type="number" id="quantity" name="quantity" />
+            </div>
+            <div>
+              <label for="price">Precio</label>
+              <input type="number" id="price" name="price" />
+            </div>
+            <div>
+              <label for="modalDescription">Descripción</label>
+              <textarea id="modalDescription" name="modalDescription"></textarea>
+            </div>
+            <div>
+              <label for="modalCategory">Categoría</label>
+              <select id="modalCategory" name="modalCategory">
+                <option value="">Seleccionar</option>
+                <option value="Procesadores">Procesadores</option>
+                <option value="Tarjetas Gráficas">Tarjetas Gráficas</option>
+                <option value="Memorias RAM">Memorias RAM</option>
+                <option value="Almacenamiento">Almacenamiento</option>
+                <option value="Placas Base">Placas Base</option>
+              </select>
+            </div>
+            <div>
+              <label for="modalImage">Imagen</label>
+              <input type="file" id="modalImage" name="modalImage" />
+            </div>
+            
+            <button id="btnFormData" type="submit">---</button>
+          </form>
         </div>
       </div>
 
@@ -96,5 +119,5 @@
 </body>
   <script src="../scripts/estrellas.js"></script>
   <script src="../scripts/navbar.js"></script>
-<script src="../scripts/admin.js"></script>
+  <script src="../scripts/admin.js"></script>
 </html>

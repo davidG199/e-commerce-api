@@ -10,13 +10,13 @@ product_router = APIRouter(prefix="/products", tags=["product"])
 
 @product_router.post("/new-product", response_model=dict, status_code=201)
 async def new_product(
-    name: str = Form(...),
-    price: float = Form(...),
-    quantity: int = Form(...),
-    category: str = Form(...),
-    description: str = Form(...),
-    image: UploadFile = File(None)  # Imagen opcional
-) -> dict:
+    name: str = Form(..., min_length=2, max_length=50),
+    price: float = Form(..., ge=1, le=1000000000),
+    quantity: int = Form(..., ge=0, le=10000),
+    category: str = Form(..., min_length=1, max_length=50),
+    description: str = Form(..., min_length=15, max_length=500),
+    image: UploadFile = File(...)
+) -> JSONResponse:
     
     db = Session()
     
@@ -30,7 +30,7 @@ async def new_product(
     }
     
     ProductService(db).create_product(product_data, image)
-    return JSONResponse(status_code=200, content={"mensaje": "Producto creado correctamente"})
+    return JSONResponse(status_code=201, content={"mensaje": "Producto creado correctamente"})
 
 @product_router.get("/",response_model=List[Product], status_code=200)
 def get_products() -> List:
