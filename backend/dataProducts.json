@@ -1,82 +1,101 @@
 [
   {
-    "id": 1,
+    "category": "Procesadores",
     "name": "Intel Core i9-13900K",
     "price": 599.99,
+    "image_url": "http://localhost:8000/Imagenes_productos/intel-core-i9-13900k.jpg",
     "quantity": 15,
-    "category": "Procesadores",
+    "id": 1,
     "description": "Procesador de 13ª generación con 24 núcleos y 32 hilos, ideal para gaming y creación de contenido."
   },
   {
-    "id": 2,
-    "name": "AMD Ryzen 7 7800X3D",
-    "price": 449.99,
-    "quantity": 20,
-    "category": "Procesadores",
-    "description": "Procesador con tecnología 3D V-Cache para un rendimiento superior en videojuegos."
-  },
-  {
-    "id": 3,
+    "category": "Tarjetas Gráficas",
     "name": "NVIDIA GeForce RTX 4080",
     "price": 1199.99,
+    "image_url": "http://localhost:8000/Imagenes_productos/NVIDIA GeForce RTX 4080.jpg",
     "quantity": 10,
-    "category": "Tarjetas Gráficas",
+    "id": 3,
     "description": "GPU de última generación con 16GB GDDR6X y tecnología DLSS 3."
   },
   {
-    "id": 4,
+    "category": "Tarjetas Gráficas",
     "name": "AMD Radeon RX 7900 XTX",
     "price": 999.99,
+    "image_url": "http://localhost:8000/Imagenes_productos/Radeon RX 7900 XTX.jpg",
     "quantity": 12,
-    "category": "Tarjetas Gráficas",
+    "id": 4,
     "description": "Tarjeta gráfica con arquitectura RDNA 3 y 24GB de memoria GDDR6."
   },
   {
-    "id": 5,
+    "category": "Memorias RAM",
     "name": "Corsair Vengeance RGB Pro 32GB (2x16GB) 3600MHz",
     "price": 129.99,
+    "image_url": "http://localhost:8000/Imagenes_productos/Corsair Vengeance RGB Pro 32GB (2x16GB) 3600MHz.webp",
     "quantity": 30,
-    "category": "Memorias RAM",
+    "id": 5,
     "description": "Kit de memoria DDR4 de alto rendimiento con iluminación RGB personalizable."
   },
   {
-    "id": 6,
+    "category": "Memorias RAM",
     "name": "Kingston Fury Renegade 32GB (2x16GB) 6000MHz DDR5",
     "price": 199.99,
+    "image_url": "http://localhost:8000/Imagenes_productos/Kingston Fury Renegade 32GB (2x16GB) 6000MHz DDR5.webp",
     "quantity": 25,
-    "category": "Memorias RAM",
+    "id": 6,
     "description": "Memoria DDR5 ultra rápida con disipador de calor de alto rendimiento."
   },
   {
-    "id": 7,
+    "category": "Almacenamiento",
     "name": "Samsung 990 PRO 2TB NVMe SSD",
     "price": 249.99,
+    "image_url": "http://localhost:8000/Imagenes_productos/Samsung 990 PRO 2TB NVMe SSD.webp",
     "quantity": 18,
-    "category": "Almacenamiento",
+    "id": 7,
     "description": "Unidad SSD NVMe PCIe 4.0 con velocidades de lectura de hasta 7450 MB/s."
   },
   {
-    "id": 8,
+    "category": "Almacenamiento",
     "name": "Western Digital Black SN850X 1TB",
     "price": 149.99,
+    "image_url": "http://localhost:8000/Imagenes_productos/Western Digital Black SN850X 1TB.webp",
     "quantity": 22,
-    "category": "Almacenamiento",
+    "id": 8,
     "description": "SSD NVMe de alto rendimiento con disipador térmico integrado."
   },
   {
-    "id": 9,
+    "category": "Placas Base",
     "name": "MSI MAG B650 TOMAHAWK WIFI",
     "price": 239.99,
+    "image_url": "http://localhost:8000/Imagenes_productos/MSI MAG B650 TOMAHAWK WIFI.png",
     "quantity": 14,
-    "category": "Placas Base",
+    "id": 9,
     "description": "Placa base compatible con procesadores AMD Ryzen serie 7000 con conectividad Wi-Fi 6E."
   },
   {
-    "id": 10,
+    "category": "Placas Base",
     "name": "ASUS ROG STRIX Z790-E Gaming WIFI",
     "price": 499.99,
+    "image_url": "http://localhost:8000/Imagenes_productos/ASUS ROG STRIX Z790-E Gaming WIFI.webp",
     "quantity": 8,
-    "category": "Placas Base",
+    "id": 10,
     "description": "Placa base de gama alta para Intel con soporte DDR5 y PCIe 5.0."
+  },
+  {
+    "category": "Procesadores",
+    "name": "Intel core i5-12400",
+    "price": 729.99,
+    "image_url": "http://localhost:8000/Imagenes_productos/intel Core i5-12400.webp",
+    "quantity": 5,
+    "id": 11,
+    "description": "Frecuencia base de Performance-core \r\n2.50 GHz"
+  },
+  {
+    "category": "Procesadores",
+    "name": "AMD Ryzen 7 7800X3D",
+    "price": 449.99,
+    "image_url": "http://localhost:8000/Imagenes_productos/amd-ryzen-7-7800X3D.avif",
+    "quantity": 20,
+    "id": 12,
+    "description": "Procesador con tecnología 3D V-Cache para un rendimiento superior en videojuegos."
   }
 ]

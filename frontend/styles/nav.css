@@ -85,6 +85,61 @@ header {
   display: block;
 }
 
+#btn_user{
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+}
+
+#user_panel {
+  display: none;
+  position: absolute;
+  right: 1rem;
+  top: 3.5rem;
+  min-width: 180px;
+  background-color: #1e1e1e;
+  border: 1px solid #555;
+  border-radius: 8px;
+  padding: 0.75rem;
+  z-index: 10;
+}
+
+#user_panel.panel-visible {
+  display: block;
+}
+
+#user_panel .panel_ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+}
+
+#user_panel .panel_ul li {
+  display: block;
+  list-style: none;
+}
+
+#user_panel a,
+#user_panel button {
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+#user_panel a:hover,
+#user_panel button:hover {
+  color: #51ce55;
+}
+
 
 @media only screen and (min-width: 560px) {
   .nav_toggle {
