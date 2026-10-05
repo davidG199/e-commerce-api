@@ -1,32 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Api-ecommerce</title>
-    <link
-      rel="shortcut icon"
-      href="/frontend/icons/shopping_cart.svg"
-      type="image/x-icon"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/frontend/styles/main.css" />
-    <link rel="stylesheet" href="/frontend/styles/nav.css" />
-    <link rel="stylesheet" href="/frontend/styles/login.css" />
-    <link rel="stylesheet" href="/frontend/styles/estrellasFondo.css" />
-    <link rel="stylesheet" href="/frontend/styles/admin.css" />
-    <link rel="stylesheet" href="/frontend/styles/modalcard.css" />
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Api-ecommerce</title>
+      <link
+        rel="shortcut icon"
+        href="/frontend/icons/shopping_cart.svg"
+        type="image/x-icon"
+      />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet"
+      />
+      <link rel="stylesheet" href="/frontend/styles/main.css" />
+      <link rel="stylesheet" href="/frontend/styles/nav.css" />
+      <link rel="stylesheet" href="/frontend/styles/login.css" />
+      <link rel="stylesheet" href="/frontend/styles/estrellasFondo.css" />
+      <link rel="stylesheet" href="/frontend/styles/admin.css" />
+      <link rel="stylesheet" href="/frontend/styles/modalcard.css" />
+    </head>
   </head>
-</head>
-<body>
-  <div id="bg_class"></div>
-  <header>
+  <body>
+    <div id="bg_class"></div>
+    <header>
       <nav class="nav">
         <input type="checkbox" id="nav_checkbox" class="nav_checkbox" />
         <label for="nav_checkbox" class="nav_toggle">
@@ -38,18 +38,15 @@
           <li>
             <a href="../index.html">E-commerce-API</a>
           </li>
-          <li>
-          </li>
+          <li></li>
           <li id="li_user">
             <!-- contenido dinamico -->
             <!-- <a href="#" id="btn_user"></a> -->
           </li>
-          
         </ul>
       </nav>
     </header>
     <main class="admin-main">
-
       <div class="admin-header">
         <h1>Panel de Administración</h1>
         <p>Bienvenido al panel de administración</p>
@@ -75,7 +72,7 @@
         <div class="modal-card">
           <h2 id="modalTitle"></h2>
           <button class="close-modal" id="closeModal">&times;</button>
-          <form class="modal-form" id="modalForm" >
+          <form class="modal-form" id="modalForm">
             <div>
               <label for="modalName">Nombre</label>
               <input type="text" id="modalName" name="modalName" />
@@ -90,7 +87,10 @@
             </div>
             <div>
               <label for="modalDescription">Descripción</label>
-              <textarea id="modalDescription" name="modalDescription"></textarea>
+              <textarea
+                id="modalDescription"
+                name="modalDescription"
+              ></textarea>
             </div>
             <div>
               <label for="modalCategory">Categoría</label>
@@ -107,16 +107,27 @@
               <label for="modalImage">Imagen</label>
               <input type="file" id="modalImage" name="modalImage" />
             </div>
-            
+
             <button id="btnFormData" type="submit">---</button>
           </form>
         </div>
       </div>
 
+      <!-- modal de confirmacion para eliminar producto -->
+      <div class="modal-overlay" id="modalConfirmDelete">
+        <div class="modal-card">
+          <h2>Confirmar Eliminación</h2>
+          <p>¿Estás seguro de que deseas eliminar este producto?</p>
+          <button id="btnConfirmDelete">Eliminar</button>
+          <button id="btnCancelDelete">Cancelar</button>
+        </div>
+      </div>
+
+
 
     </main>
     <footer>Hola como estas, David gomez</footer>
-</body>
+  </body>
   <script src="../scripts/estrellas.js"></script>
   <script src="../scripts/navbar.js"></script>
   <script src="../scripts/admin.js"></script>

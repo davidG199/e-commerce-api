@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 from fastapi import APIRouter, File, Form, UploadFile
 from schemas.products import Product
 from config.database import Session
@@ -33,7 +33,7 @@ async def new_product(
     return JSONResponse(status_code=201, content={"mensaje": "Producto creado correctamente"})
 
 @product_router.get("/",response_model=List[Product], status_code=200)
-def get_products() -> List:
+def get_products():
     db = Session()
     result = ProductService(db).get_products()
 
@@ -49,6 +49,44 @@ def get_product_by_id(id: int) -> dict:
 
     if result:
         return JSONResponse(status_code=200, content=jsonable_encoder(result))
+    else:
+        return JSONResponse(status_code=404, content={"mensaje": "Producto no encontrado"})
+
+@product_router.patch("/update/{id}", response_model=dict, status_code=200)
+def update_product(
+    id: int, 
+    name: str = Form(..., min_length=2, max_length=50),
+    price: float = Form(..., ge=1, le=1000000000),
+    quantity: int = Form(..., ge=0, le=10000),
+    category: str = Form(..., min_length=1, max_length=50),
+    description: str = Form(..., min_length=15, max_length=500),
+    image: Optional[UploadFile] = File(None)
+    ) -> JSONResponse:
+
+    db = Session()
+
+    product_data = {
+        "name": name,
+        "price": price,
+        "quantity": quantity,
+        "category": category,
+        "description": description,
+    }
+
+    result = ProductService(db).update_product(id, product_data, image)
+
+    if result:
+        return JSONResponse(status_code=200, content=jsonable_encoder(result))
+    else:
+        return JSONResponse(status_code=404, content={"mensaje": "Producto no encontrado"})
+
+@product_router.delete("/delete/{id}", response_model=dict, status_code=200)
+def delete_product(id: int):
+    db = Session()
+    result = ProductService(db).delete_product(id)
+
+    if result:
+        return JSONResponse(status_code=200, content={"mensaje": "Producto eliminado correctamente"})
     else:
         return JSONResponse(status_code=404, content={"mensaje": "Producto no encontrado"})
 

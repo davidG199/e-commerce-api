@@ -39,3 +39,32 @@ class ProductService():
         result = self.db.query(ModelProduct).filter(ModelProduct.id == id).first()
         return result
 
+    def delete_product(self, id: int):
+        product = self.get_product_by_id(id)
+        if product:
+            self.db.delete(product)
+            self.db.commit()
+            return True
+        else:
+            return False
+
+    def update_product(self, id: int, product_data: dict, image_file: UploadFile = None):
+        product = self.get_product_by_id(id)
+        if not product:
+            return None
+
+        # Actualizar los campos del producto
+        for key, value in product_data.items():
+            setattr(product, key, value)
+
+        # Manejo de la imagen
+        if image_file:
+            file_path = os.path.join(UPLOAD_FOLDER, image_file.filename)
+            with open(file_path, "wb") as buffer:
+                shutil.copyfileobj(image_file.file, buffer)
+            product.image_url = f"http://localhost:8000/{file_path}"
+
+        self.db.commit()
+        self.db.refresh(product)
+        return product
+

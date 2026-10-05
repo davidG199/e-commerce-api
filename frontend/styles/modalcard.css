@@ -112,4 +112,17 @@
 Modal para el ingreso de datos del producto
 */
 
+#btnFormData {
+  background-color: rgb(81, 206, 85);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
 
+#btnFormData:hover {
+  background-color: #3e9142;
+}

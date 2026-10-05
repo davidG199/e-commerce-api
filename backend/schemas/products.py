@@ -8,7 +8,7 @@ class Product(BaseModel):
     price: float = Field(ge=1, le=1000000000)
     quantity: int = Field(ge=0, le=10000)
     category: str = Field(min_length=1, max_length=50)
-    description: str = Field(min_length=15, max_length=100)
+    description: str = Field(min_length=15, max_length=500)
     image_url: Optional[HttpUrl] = None
 
     model_config = {
